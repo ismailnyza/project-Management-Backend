@@ -11,14 +11,14 @@ import com.projectManagementAPI.api.util.EnvValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Paths;
+
 public class Main {
     private static final Logger log = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         try {
-            // Adjust the required variable names to match your app's needs
-            System.getProperty("user.dir");
-            System.out.println("====");
+            System.out.println("PWD = " + Paths.get(".").toAbsolutePath());
             EnvLoader.loadDotEnv(".env");
             EnvValidator.ensure("APP_PORT","DB_URL","DB_USER","DB_PASS");
 

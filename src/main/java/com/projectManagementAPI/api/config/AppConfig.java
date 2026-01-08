@@ -23,12 +23,18 @@ public final class AppConfig {
         );
     }
 
-    private static String getRequiredEnv(String name) {
-        String v = System.getenv(name);
-        if (v == null || v.isBlank()) {
-            throw new IllegalStateException("Missing required env var: " + name);
+    private static String getRequiredEnv(String key) {
+        String value = System.getenv(key);
+
+        if (value == null || value.isBlank()) {
+            value = System.getProperty(key);
         }
-        return v;
+
+        if (value == null || value.isBlank()) {
+            throw new IllegalStateException("Missing required env var: " + key);
+        }
+
+        return value;
     }
 
     private static int getEnvInt(String name, int defaultValue) {
