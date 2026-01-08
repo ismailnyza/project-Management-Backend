@@ -1,4 +1,4 @@
-package com.projectManagementAPI.model.entity;
+package com.projectManagementAPI.api.entity;
 
 import java.time.LocalDateTime;
 

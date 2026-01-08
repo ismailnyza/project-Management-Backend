@@ -1,0 +1,38 @@
+// java
+package com.projectManagementAPI.api;
+
+import com.projectManagementAPI.api.config.AppConfig;
+import com.projectManagementAPI.api.controller.BoardController;
+import com.projectManagementAPI.api.repository.BoardRepository;
+import com.projectManagementAPI.api.service.BoardService;
+import com.projectManagementAPI.api.error.StartupException;
+import com.projectManagementAPI.api.util.EnvValidator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class Main {
+    private static final Logger log = LoggerFactory.getLogger(Main.class);
+
+    public static void main(String[] args) {
+        try {
+            // Adjust the required variable names to match your app's needs
+            EnvValidator.ensure("APP_PORT", "DB_URL", "DB_USER", "DB_PASS");
+
+            AppConfig.load();
+
+            BoardRepository boardRepository = new BoardRepository();
+            BoardService boardService = new BoardService(boardRepository);
+            new BoardController(boardService);
+            log.info("main started");
+        } catch (StartupException se) {
+            System.err.println("Startup error: " + se.getMessage());
+            log.error("Startup error", se);
+            System.exit(2); // distinct exit code for startup/config errors
+        } catch (Throwable t) {
+            System.err.println("Unhandled exception in main:");
+            t.printStackTrace(System.err);
+            log.error("Unhandled exception in main", t);
+            System.exit(1);
+        }
+    }
+}

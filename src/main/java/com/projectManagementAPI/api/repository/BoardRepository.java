@@ -1,7 +1,7 @@
-package com.projectManagementAPI.model.repository;
+package com.projectManagementAPI.api.repository;
 
 
-import com.projectManagementAPI.model.entity.Board;
+import com.projectManagementAPI.api.entity.Board;
 
 import java.util.ArrayList;
 import java.util.List;

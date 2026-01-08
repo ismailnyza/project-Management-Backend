@@ -1,7 +1,7 @@
-package com.projectManagementAPI.model.service;
+package com.projectManagementAPI.api.service;
 
-import com.projectManagementAPI.model.entity.Board;
-import com.projectManagementAPI.model.repository.BoardRepository;
+import com.projectManagementAPI.api.entity.Board;
+import com.projectManagementAPI.api.repository.BoardRepository;
 
 import java.util.List;
 

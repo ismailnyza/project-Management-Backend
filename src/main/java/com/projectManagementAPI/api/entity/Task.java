@@ -1,4 +1,4 @@
-package com.projectManagementAPI.model.entity;
+package com.projectManagementAPI.api.entity;
 
 public class Task{
     public Long id;

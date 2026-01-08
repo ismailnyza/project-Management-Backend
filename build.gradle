@@ -25,7 +25,7 @@ dependencies {
 }
 
 application {
-    mainClass = 'com.projectManagementAPI.model.Main'
+    mainClass = 'com.projectManagementAPI.api.Main'
 }
 
 test {
