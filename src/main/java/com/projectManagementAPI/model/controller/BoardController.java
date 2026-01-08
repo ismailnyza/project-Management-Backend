@@ -1,6 +1,6 @@
 package com.projectManagementAPI.model.controller;
 
-import com.projectManagementAPI.model.Board;
+import com.projectManagementAPI.model.entity.Board;
 import com.projectManagementAPI.model.service.BoardService;
 import spark.Request;
 import spark.Response;

@@ -8,7 +8,6 @@ import static spark.Spark.port;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
         port(8000);
 
         BoardRepository boardRepository = new BoardRepository();

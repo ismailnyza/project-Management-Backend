@@ -1,4 +1,4 @@
-package com.projectManagementAPI.model;
+package com.projectManagementAPI.model.entity;
 
 import java.util.ArrayList;
 
