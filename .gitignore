@@ -15,15 +15,16 @@ gradle-app.setting
 # --- Java ---
 *.class
 *.log
-*.ctxt
 *.jar
 *.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
 
-# --- OS Specific ---
+# --- Frontend ---
+frontend/node_modules/
+frontend/dist/
+
+# --- DB ---
+*.db
+
+# --- OS ---
 .DS_Store
 Thumbs.db
